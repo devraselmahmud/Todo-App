@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="todo-list">
+    <h1>Todo List</h1>
+    <div>
+      <input [(ngModel)]="todo.title" type="text" placeholder="Add a new task...">
+      <button [disabled]="!todo.title" (click)="addTodo()" type="submit" >{{ todo.id?'Update':'Add' }}</button>
+    </div>
+
+    <ul>
+      <li *ngFor="let item of todoList">
+        <label for="task">{{item.title}}</label>
+        <i (click)="editTodo(item)" class="fa fa-pencil"></i>
+        <i (click)="deleteTodo(item.id)" class="fa-solid fa-trash"></i>
+      </li>
+    </ul>
+
+  </div>
+</div>
